@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="/css/home.css">
+<div class="container">
+    <div class="left-container">
+        <div class="user-detail">
+            <div class="head">
+                <div class="heading">
+                    <h1>Hey <%= locals.user.username %>
+                    </h1>
+                    <p class="bedtime">5 hrs 42 mins till bedtime</p>
+                </div>
+                <div class="but">
+                    <button class="btn">Weekly</button>
+                    <button class="btn">Daily</button>
+                </div>
+            </div>
+            <form class="formbox" action="/user/addhabit/<%= locals.user.id%>" method="POST">
+                <input type="" hidden name="status" value="none" placeholder="Search-Habit">
+                <input type="text" name="habit" placeholder="Search-Habit">
+                <button id="addtaskbutton" class="btn">+Add Habit</button>
+            </form>
+        </div>
+
+        <div class="habit-container">
+            <table>
+                <tr class="weekdaylist">
+                    <th></th>
+                    <% let weekdays=['Sun', 'Mon' , 'Tue' , 'Wed' , 'Thu' , 'Fri' , 'Sat' ]; %>
+                        <% let currentDay=new Date().getDay(); %>
+                            <% let startingDay=weekdays[currentDay]; %>
+                                <% for (let i=currentDay+1; i < weekdays.length; i++) { %>
+
+                                    <th>
+                                        <% weekdays[currentDay]="Today" %>
+                                            <%= weekdays[i] %>
+                                    </th>
+                                    <% } %>
+                                        <% for (let i=0; i <=currentDay; i++) { %>
+                                            <th>
+                                                <%= weekdays[i] %>
+                                            </th>
+                                            <% } %>
+                </tr>
+                <% for(user_habit of users_habit){ %>
+
+                    <%- include('habit'); -%>
+                        <% } %>
+
+            </table>
+
+        </div>
+    </div>
+    <div class="right-container">
+        <div class="day-selector-container">
+            <!-- <h1>I am extra box</h1> -->
+            <form >
+                <label for="week-selector">Select Day:</label>
+                <select id="week-selector" name="selectday">
+                    <option value="Sun">Sun</option>
+                    <option value="Mon">Mon</option>
+                    <option value="Tue">Tue</option>
+                    <option value="Wed">Wed</option>
+                    <option value="Thu">Thu</option>
+                    <option value="Fri">Fri</option>
+                    <option value="Sat">Sat</option>
+                </select>
+                <a id="week-select-button">Select</a>
+            </form>
+
+            <a href="/">Logout</a>
+        </div>
+        <div class="habit-card">
+            <!-- Card -->
+            <% for(user_habit of users_habit){ %>
+
+                <div class="card">
+                    <div>
+                        <h1>
+                            <%= user_habit.habit%>
+                        </h1>
+                        <a href="/user/delete/<%=user_habit.id %>"><i class="uil uil-trash-alt"></i></a>
+                    </div>
+                    <div>
+                        <a href="#" name="done" onclick="sendDone('done', `<%= user_habit._id %>`)">
+                            <p>Done</p>
+                        </a>
+                        <a href="#" name="not-done" onclick="sendDone('notdone','<%= user_habit._id %>')">
+                            <p>Not-Done</p>
+                        </a>
+                    </div>
+                </div>
+                <% } %>
+                    <!-- card end -->
+        </div>
+    </div>
+</div>
+
+<script src="/js/home.js"></script>
+<script src="/js/finduser.js"></script>

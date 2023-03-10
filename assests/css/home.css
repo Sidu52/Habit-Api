@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.container{
+    display: flex;
+    background-color: #037afc;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+}
+/* Left side container styling */
+.container .left-container{
+    width: 70%;
+    background-color: white;
+    margin: 5% 1%;
+    padding: 3px 2%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-bottom: 1px solid black;
+}
+.left-container .user-detail{
+    position: sticky;
+    top: 0;
+    width: 96%;
+    padding: 3%;
+    border-bottom: 1px solid black;
+    background: #fff;
+    z-index: 1;
+
+}
+.container .left-container .head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .left-container .head .heading{
+    padding:21px;
+}
+.left-container .head .but button{
+    width: 115px;
+    padding: 10px;
+} 
+.container .left-container .formbox{
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 7px;
+}
+.container .left-container form input{
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+.container .left-container .btn{
+    width: 129px;
+    border: none;
+    padding: 10px;
+    background: transparent;
+    border-left: 1px solid black;
+}
+
+.container .left-container .habit-container{
+    margin: 1% 5%;
+}
+.container .left-container .habit-container table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.left-container .habit-container table .weekdaylist{
+    position: sticky;
+    top: 33%;
+    background-color: white;
+    text-align: center;
+}
+.container .left-container .habit-container table th{
+    color: gray;
+    font-weight: 500;
+    padding-left: 27px;
+    text-align: start;
+}
+.left-container table .table-data {
+    line-height: 3;
+}
+.left-container table .table-data td{
+    color: black;
+    font-weight: 800;
+}
+
+.left-container table .table-data .button-form .habitbutton {
+    border: none;
+    background-color: lime;
+    padding: 10px;
+    border-radius: 15%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+/* Right side container styling */
+.container .right-container{
+    width: 26%;
+    background-color: white;
+    position: relative;
+    padding: 0 2%;
+    margin: 5% 0;
+    
+    overflow-y: scroll;
+}
+.container .right-container .day-selector-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 25px 0;
+    margin: 8px 0;
+}
+.right-container .day-selector-container label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  .right-container .day-selector-container select {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+  }
+.right-container .day-selector-container a {
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+.right-container .day-selector-container button:hover{
+    background-color: #3e8e41;
+}  
+
+.right-container .habit-card{
+    border: 1px solid black;
+    padding: 5px 15px;
+}
+.right-container .habit-card .card{
+    background-color: orange;
+    border-radius: 5%;
+    padding: 20px;
+    margin: 10px 0;
+}
+.right-container .habit-card .card div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* For webkit-based browsers */
+::-webkit-scrollbar {
+    width: 10px; /* width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* color of the track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* color of the thumb */
+    border-radius: 5px; /* roundness of the thumb */
+  }
+  
+  /* For Firefox */
+  ::-moz-scrollbar {
+    width: 10px; /* width of the scrollbar */
+  }
+  
+  ::-moz-scrollbar-track {
+    background-color: #f1f1f1; /* color of the track */
+  }
+  
+  ::-moz-scrollbar-thumb {
+    background-color: #3498db; /* color of the thumb */
+    border-radius: 5px; /* roundness of the thumb */
+  }
+  

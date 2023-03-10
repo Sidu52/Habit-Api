@@ -1,0 +1,62 @@
+<tr class="table-data">
+  <td style="padding: 10px;">
+    <%= user_habit.habit %>
+  </td>
+  <!-- List to show the week days records -->
+  
+  <td style="padding: 10px;">
+    <form class="button-form" onclick=" sendDone(`<%=user_habit._id%>`,'one',`<%=user_habit.days.one%>`)">
+      <a href="#" class="habitbutton">
+        <%= user_habit.days.one %>
+      </a>
+    </form>
+  </td>
+
+  <td style="padding: 10px;">
+    <form class="button-form" onclick=" sendDone(`<%=user_habit._id%>`,'two',`<%=user_habit.days.two%>`)">
+      <a href="#" class="habitbutton" type="submit">
+        <%= user_habit.days.two %>
+      </a>
+    </form>
+  </td>
+
+  <td style="padding: 10px;">
+    <form class="button-form" onclick=" sendDone(`<%=user_habit._id%>`,'three',`<%=user_habit.days.three%>`)">
+      <a href="#" class="habitbutton" type="submit">
+        <%= user_habit.days.three %>
+      </a>
+    </form>
+  </td>
+
+  <td style="padding: 10px;">
+    <form class="button-form" onclick=" sendDone(`<%=user_habit._id%>`,'four',`<%=user_habit.days.four%>`)">
+      <a href="#" class="habitbutton" type="submit">
+        <%= user_habit.days.four %>
+      </a>
+    </form>
+  </td>
+
+  <td style="padding: 10px;">
+    <form class="button-form" onclick=" sendDone(`<%=user_habit._id%>`,'five',`<%=user_habit.days.five%>`)">
+      <a href="#" class="habitbutton" type="submit">
+        <%= user_habit.days.five %>
+      </a>
+    </form>
+  </td>
+
+  <td style="padding: 10px;">
+    <form class="button-form" onclick=" sendDone(`<%=user_habit._id%>`,'six',`<%=user_habit.days.six%>`)">
+      <a href="#" class="habitbutton" type="submit">
+        <%= user_habit.days.six %>
+      </a>
+    </form>
+  </td>
+
+  <td style="padding: 10px;">
+    <form class="button-form" onclick=" sendDone(`<%=user_habit._id%>`,'seven',`<%=user_habit.days.seven%>`)">
+      <a href="#" class="habitbutton" type="submit">
+        <%= user_habit.days.seven %>
+      </a>
+    </form>
+  </td>
+</tr>
