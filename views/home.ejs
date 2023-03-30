@@ -9,8 +9,7 @@
                     <p class="bedtime">5 hrs 42 mins till bedtime</p>
                 </div>
                 <div class="but">
-                    <button class="btn">Weekly</button>
-                    <button class="btn">Daily</button>
+                    <h3>Hyy buddy..</h3>
                 </div>
             </div>
             <form class="formbox" action="/user/addhabit/<%= locals.user.id%>" method="POST">
@@ -77,16 +76,10 @@
                         <h1>
                             <%= user_habit.habit%>
                         </h1>
-                        <a href="/user/delete/<%=user_habit.id %>"><i class="uil uil-trash-alt"></i></a>
+                        <a href="/user/delete/<%=user_habit.id %>"><i class="uil uil-trash-alt" style="font-size:30px;"></i></a>
                     </div>
-                    <div>
-                        <a href="#" name="done" onclick="sendDone('done', `<%= user_habit._id %>`)">
-                            <p>Done</p>
-                        </a>
-                        <a href="#" name="not-done" onclick="sendDone('notdone','<%= user_habit._id %>')">
-                            <p>Not-Done</p>
-                        </a>
-                    </div>
+                   
+                    
                 </div>
                 <% } %>
                     <!-- card end -->
