@@ -24,21 +24,24 @@
                 <tr class="weekdaylist">
                     <th></th>
                     <% let weekdays=['Sun', 'Mon' , 'Tue' , 'Wed' , 'Thu' , 'Fri' , 'Sat' ]; %>
-                        <% let currentDay=new Date().getDay(); %>
-                            <% let startingDay=weekdays[currentDay]; %>
-                                <% for (let i=currentDay+1; i < weekdays.length; i++) { %>
-
-                                    <th>
-                                        <% weekdays[currentDay]="Today" %>
-                                            <%= weekdays[i] %>
-                                    </th>
-                                    <% } %>
-                                        <% for (let i=0; i <=currentDay; i++) { %>
-                                            <th>
-                                                <%= weekdays[i] %>
-                                            </th>
-                                            <% } %>
+                    <% let currentDay=new Date().getDay(); %>
+                    <% let startingDay=weekdays[currentDay]; %>
+                    <% for (let i=currentDay+1; i < weekdays.length; i++) { %>
+                        <% if (i === currentDay + 1) { %>
+                            <th>Today</th>
+                        <% } else { %>
+                            <th><%= weekdays[i] %></th>
+                        <% } %>
+                    <% } %>
+                    <% for (let i=0; i <=currentDay; i++) { %>
+                        <% if (i === currentDay) { %>
+                            <th>Today</th>
+                        <% } else { %>
+                            <th><%= weekdays[i] %></th>
+                        <% } %>
+                    <% } %>
                 </tr>
+                
                 <% for(user_habit of users_habit){ %>
 
                     <%- include('habit'); -%>
