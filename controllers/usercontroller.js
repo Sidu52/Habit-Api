@@ -41,8 +41,15 @@ module.exports.addhabit = async (req, res) => {
     let habitfind = await Habitschema.findById(req.params.id); {
         if (!habitfind) {
             const user = await User.findById(req.params.id);
-            const Habit = await Habitschema.findOne({ habit: req.body.habit });
-            if (!Habit) {
+            const Habits = await Habitschema.find({ habit: req.body.habit });
+            // Check user upload same habit before or not
+            let userfind=false;
+            Habits.map(habit => {
+                if (habit.user== user.id) {
+                    userfind=true;
+                }
+            });
+            if (!Habits || !userfind) {
                 const today = new Date(); // Get the current date
                 const currentDay = today.getDay(); // Get the current day of the week (0-6, with 0 representing Sunday)
                 const arr = ["Sun", "Mon", "Tue", "Web", "Thu", "Fri", "Sat"];
